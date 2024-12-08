@@ -1,0 +1,26 @@
+Proprietary License Agreement
+Copyright 2024 Annalisa Vitulli
+All Rights Reserved.
+
+This software, t5-leetcode-title-gen, and its associated files (the "Software") are the exclusive property of Annalisa Vitulli (the "Owner") and are protected by copyright laws and international copyright treaties. By accessing or using the Software, you agree to the terms of this Proprietary License.
+
+1. Ownership
+The Owner retains full ownership and copyright of the Software. No ownership rights are transferred by this agreement.
+
+2. Permitted Use
+You are permitted to view the Software solely for personal, non-commercial purposes. You may not use the Software for any commercial activities or purposes without prior written consent from the Owner.
+
+3. Prohibited Actions
+You are explicitly prohibited from:
+  - Copying, distributing, or redistributing the Software in any form or by any means.
+  - Modifying, translating, adapting, or creating derivative works of the Software.
+  - Decompiling, reverse-engineering, or attempting to extract the source code of the Software.
+  - Using the Software for any illegal, harmful, or unethical purposes.
+
+4. No Warranty
+The Software is provided "as is" without warranty of any kind, express or implied. The Owner is not liable for any damages, losses, or issues arising from the use or inability to use the Software.
+
+5. Termination
+This license is effective until terminated. Your rights under this license will terminate automatically without notice if you fail to comply with its terms. Upon termination, you must immediately destroy all copies of the Software in your possession or control.
+
+By accessing or using the Software, you acknowledge that you have read, understood, and agreed to these terms.
