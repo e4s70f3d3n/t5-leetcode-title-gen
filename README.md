@@ -1,65 +1,55 @@
-# 🤖 Fine-Tuned T5 Model for LeetCode-Style Question Title Generation 🎓💻
+# Fine-Tuned T5 Model for LeetCode-Style Question Title Generation
 
-Welcome to the **T5 LeetCode-style Title Gen** repository! 🌟 This AI model has been fine-tuned on over 2,000 LeetCode questions to generate **LeetCode-style question titles** for coding questions on **University Computer Science Entrance Exams**. 📚✨
+Welcome to the **`t5-leetcode-title-gen`** repository! Based on the **google/flan-t5-large** model, this **T5-LeetCode-Title-Generator** has been  fine-tuned on over **2,600 LeetCode questions** specifically adapted to **generate LeetCode-style question titles for coding problems**.
 
----
-
-## 🧠 Model Purpose
+## Model Purpose
 This model is designed to:
 
-- 📝 **Generate concise, professional, and LeetCode-style titles** for coding problems.
-- 📖 **Help organize and standardize the presentation of questions** on University-level **Computer Science Entrance Exams**, mandatory assessments that aspiring computer science majors must pass to obtain official entrance into the major and take upper level courses. 🧑‍🎓👩‍🎓
+- **Generate concise, professional, and LeetCode-style titles** for coding problems.
+- **Standardize and enhance question organization** for **University-level Computer Science Entrance Exams**—critical assessments required for students entering the **Computer Science major** and taking **upper-level courses**.
 
-By streamlining the titling process, this model supports:
-- 🎯 Effective classification of coding problems allowing for more effective topic-based studying.
-- 🏆 A polished and consistent experience for students and educators alike.
+By **automating and improving** the titling process, this model ensures:
 
----
+- **More effective topic-based studying** by categorizing problems precisely.
+- **A polished and consistent experience** for students and educators alike.
 
-## 📊 Training Data
-The model was fine-tuned on approximately **2,360 LeetCode problems** using the **`greengerong/leetcode` dataset** available on Hugging Face.
 
-### Dataset Details:
-- 💻 **Problem Descriptions**: Clear explanations of coding challenges.
-- 📑 **Associated Question Titles**: Well-structured and concise titles for each problem.
-- 💡 **Code Solutions**: Implementations in multiple languages, including:
+## Training Data
+
+The model was fine-tuned on **2,612 LeetCode problems** using the [greengerong/leetcode dataset](https://huggingface.co/datasets/greengerong/leetcode) from Hugging Face.
+
+### **Dataset Details**:
+- **Problem Descriptions**: Clear explanations of coding challenges.
+- **Associated Question Titles**: Well-structured and concise titles.
+- **Code Solutions**: Implementations in multiple languages:
   - Java
   - C++
   - Python
   - JavaScript
 
-The fine-tuning process ensured that the model learned the **style and structure** of these titles, making it highly effective for generating LeetCode-style titles for new problems.
+The fine-tuning process ensured the model learned the LeetCode-style titling patterns, making it highly effective for generating professional-grade titles for new problems.<br>
 
----
 
-## 🛠️ How It Works
-This fine-tuned version of the **T5 model** leverages its sequence-to-sequence capabilities to:
+## Model Description
 
-1. 💬 **Take a coding problem description as input** (e.g., "Write a function to find the longest common prefix in an array of strings.").
-2. 🪄 **Generate a clear, professional title** (e.g., "Longest Common Prefix").
+ As input, the T5-LeetCode-Title-Generator **accepts detailed problem descriptions** and **outputs concise, meaningful titles**. This task is particularly useful for platforms that host programming challenges and educational content or for University Computer Science Entrance Exams.<br>
 
----
 
-## 🔬 Evaluation Metrics
-The model was evaluated using:
 
-- 📏 **ROUGE Scores**: Measures the overlap between generated titles and reference titles.
-  - **ROUGE-1**: Precision, recall, and F1 for unigrams.
-  - **ROUGE-2**: Precision, recall, and F1 for bigrams.
-  - **ROUGE-L**: Precision, recall, and F1 for longest common subsequences.
+## How It Works
 
-💻 Results indicate a strong ability to generate accurate and concise titles! 🚀
+This fine-tuned **T5 model** leverages its **sequence-to-sequence** capabilities to:
 
----
+1. Take a **coding problem description** as input  
+   **Example**: `"Write a function to find the longest common prefix in an array of strings."`
+2. Generate a **clear, professional title**  
+   **Output**: `"Longest Common Prefix"`
 
-## 🚀 Quickstart
-
-Here’s how you can use this model:
-
+### Quickstart Code:
 ```python
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-# Load the model and tokenizer
+# Load the fine-tuned model and tokenizer
 model = AutoModelForSeq2SeqLM.from_pretrained("your-username/fine-tuned-t5-model")
 tokenizer = AutoTokenizer.from_pretrained("your-username/fine-tuned-t5-model")
 
@@ -73,3 +63,87 @@ outputs = model.generate(**inputs, max_length=15, num_beams=4, early_stopping=Tr
 # Decode the generated title
 generated_title = tokenizer.decode(outputs[0], skip_special_tokens=True)
 print("Generated Title:", generated_title)
+```
+
+
+## Evaluation & Performance Gains
+
+### ROUGE Score Improvements
+
+The **fine-tuned model** significantly outperforms the **non-fine-tuned google/flan-t5-large model** across **all key metrics**:
+
+- **ROUGE-1 Improvements**:
+  - **Precision**: **+107.6%** increase (0.3028 → 0.6285)
+  - **Recall**: **+83.1%** increase (0.3874 → 0.7095)
+  - **F1-Score**: **+105.8%** increase (0.3118 → 0.6416)
+
+- **ROUGE-2 Improvements**:
+  - **Precision**: **+216.1%** increase (0.1441 → 0.4554)
+  - **Recall**: **+169.3%** increase (0.1843 → 0.4966)
+  - **F1-Score**: **+209.8%** increase (0.1466 → 0.4539)
+
+- **ROUGE-L Improvements**:
+  - **Precision**: **+113.6%** increase (0.2860 → 0.6107)
+  - **Recall**: **+87.7%** increase (0.3667 → 0.6879)
+  - **F1-Score**: **+111.1%** increase (0.2951 → 0.6234)<br><br>
+
+
+
+### **Visual ROUGE Score Comparisons**: <br>
+---
+
+
+<br>**Non-Fine-Tuned T5 Model ROUGE Scores:**<br>  
+![Non-Fine-Tuned ROUGE Scores](./images/t5_rouge_plots.png)
+
+---
+
+<br>**Fine-Tuned T5 Model ROUGE Scores:**<br>  
+![Fine-Tuned ROUGE Scores](./images/fine_tuned_t5_rouge_plots.png)
+
+---
+
+## Fine-Tuning Methodology
+
+The **fine-tuned model** used **Hugging Face’s Trainer API** with the following hyperparameters:
+
+- **Learning Rate**: `2e-5`
+- **Weight Decay**: `0.01`
+- **Epochs**: `3`
+- **Batch Size**: `2` (due to GPU limitations)
+- **Gradient Accumulation Steps**: `2`
+- **Gradient Checkpointing**: `True`
+
+During training:
+- **Training loss decreased significantly**, indicating **effective learning**.
+- **Validation loss decreased steadily**, ensuring **robust generalization**.
+
+---
+
+## Future Improvements
+
+1. **Reduce `max_length`**  
+   - Currently **256** tokens → Lowering to **100-125** to align with **exam question length**.
+
+2. **Disable `gradient_checkpointing`**  
+   - Since the **fine-tuning used a CPU**, disabling this will optimize performance.
+
+3. **Optimize Learning Rate**  
+   - Adjusting **learning rate decay** to further refine **title accuracy**.
+
+---
+
+## Conclusion
+
+With **dramatically improved performance** in **ROUGE-1, ROUGE-2, and ROUGE-L**, this fine-tuned **T5 model** is an ideal solution for **LeetCode-style title generation**. It offers **concise, high-quality titles**, making **University Computer Science Entrance Exams** more structured and effective.
+
+🔗 **Try it now on Hugging Face**: [e4s70f3d3n/fine-tuned-t5-model](https://huggingface.co/your-username/fine-tuned-t5-model)
+
+
+## Key Features:
+- **Developed by:** Annalisa Vitulli
+- **Languages:** English (`en`)
+- **Model Type:** Text-to-text Transfer Transformer (T5)
+- **License:** Custom (see LICENSE.txt for details)
+- **Parent Model:** [google/flan-t5-large](https://huggingface.co/google/t5-large)
+- **Dataset Used:** [greengerong/leetcode](https://huggingface.co/datasets/greengerong/leetcode)
