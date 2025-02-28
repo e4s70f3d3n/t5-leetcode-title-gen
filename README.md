@@ -73,19 +73,19 @@ print("Generated Title:", generated_title)
 The **fine-tuned model** significantly outperforms the **non-fine-tuned google/flan-t5-large model** across **all key metrics**:
 
 - **ROUGE-1 Improvements**:
-  - **Precision**: **+107.6%** increase (0.3028 → 0.6285)
-  - **Recall**: **+83.1%** increase (0.3874 → 0.7095)
+  - **Precision**: **+107.6%** increase (0.3028  →  0.6285)
+  - **Recall**: **+83.14%** increase (0.3874 → 0.7095)
   - **F1-Score**: **+105.8%** increase (0.3118 → 0.6416)
 
 - **ROUGE-2 Improvements**:
   - **Precision**: **+216.1%** increase (0.1441 → 0.4554)
-  - **Recall**: **+169.3%** increase (0.1843 → 0.4966)
-  - **F1-Score**: **+209.8%** increase (0.1466 → 0.4539)
+  - **Recall**: **+169.5%** increase (0.1843 → 0.4966)
+  - **F1-Score**: **+209.6%** increase (0.1466 → 0.4539)
 
 - **ROUGE-L Improvements**:
-  - **Precision**: **+113.6%** increase (0.2860 → 0.6107)
-  - **Recall**: **+87.7%** increase (0.3667 → 0.6879)
-  - **F1-Score**: **+111.1%** increase (0.2951 → 0.6234)<br><br>
+  - **Precision**: **+113.5%** increase (0.2860 → 0.6107)
+  - **Recall**: **+87.59%** increase (0.3667 → 0.6879)
+  - **F1-Score**: **+111.3%** increase (0.2951 → 0.6234)<br><br>
 
 
 
